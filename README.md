@@ -1,2 +1,2 @@
 # interactive_info_vis
-Visualization template for class!
+Hi I am Soha Sultana, and this is my portfolio!
