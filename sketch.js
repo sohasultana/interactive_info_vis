@@ -1,8 +1,8 @@
 //custom variables for y-coordinate of sun & horizon
 let shapeHeight;
 
-let designWidth = 400;
-let designHeight= 400;
+let designWidth = 5000;
+let designHeight= 1000;
 let horizon ;
 function setup() {
   createCanvas(designWidth,designHeight);
@@ -12,26 +12,26 @@ function setup() {
 function draw() {
 
   //shape follows y-coordinate of mouse
-  shapeHeight = mouseY;
-  currentWidth = mouseX;
+  shapeHeight = 500 - mouseY;
+  currentWidth = 500 - mouseX;
 
   //light blue background if the shape is above horizon
 
   //with if-else statement
-  if (shapeHeight < horizon) {
-    background("lightblue"); // blue if above horizon
+  if (shapeHeight < horizon / 2) {
+    background("pink"); // blue if designHeight/2
     
   } else {
-    background("grey"); // grey if below horizon
+    background("lavender"); // grey if below designHeight/2
   }
 
   //sun
-  fill("white");
+  fill("orange");
   
-  rect(width/4, shapeHeight, width/2);
-  textSize(20);
+  circle(width/10, shapeHeight, width/10);
+  textSize(50);
   fill("black");
-  text('Hi! My name is...', currentWidth/2, shapeHeight/2);
+  text('Hi! My name is Soha Sultana', currentWidth/2, shapeHeight/2);
   
 
 
@@ -41,7 +41,7 @@ function draw() {
 
   //grass
 
-  fill("lavender");
+  fill("lightgreen");
 
   rect(0, horizon, width, height);
 
@@ -53,4 +53,3 @@ function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
   horizon = height / 2; // recalc horizon after resize
 }
-
